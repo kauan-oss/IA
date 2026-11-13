@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TimãoGPT - Agente com memória</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-topo">
+        <button id="nova" type="button">+ Nova conversa</button>
+        <button id="fechar-sidebar" class="btn-icone" type="button" aria-label="Fechar menu">✕</button>
+      </div>
+
+      <div class="sidebar-secao">Histórico</div>
+      <nav id="lista-conversas" class="lista-conversas" aria-label="Conversas anteriores"></nav>
+
+      <div class="sidebar-rodape">
+        <span class="badge-clube">SCCP • 1910</span>
+        <span>Agente com memória</span>
+      </div>
+    </aside>
+
+    <!-- Área principal do chat -->
+    <main class="main">
+      <header class="topbar">
+        <button id="abrir-sidebar" class="btn-icone" type="button" aria-label="Abrir menu">☰</button>
+        <h1>Agente com memória</h1>
+      </header>
+
+      <div class="chat-container">
+        <!-- Marca d'água de fundo do chat -->
+        <div class="chat-fundo" aria-hidden="true"></div>
+
+        <!-- Mensagens -->
+        <div id="chat" aria-live="polite"></div>
+      </div>
+
+      <div class="form-container">
+        <form id="form">
+          <input id="pergunta" aria-label="Sua mensagem" placeholder="Envie uma mensagem..." autocomplete="off" required>
+          <button id="enviar" type="submit" aria-label="Enviar">➤</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

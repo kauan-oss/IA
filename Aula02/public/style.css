@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #050507;
+  color: #f3f4f6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Título superior com degradê */
+#cima_chat {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #f3e8ff 0%, #a855f7 50%, #6b21a8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Quadrado superior com informações da Ollama */
+.ollama-info {
+  background-color: #0c0c10;
+  border: 1px solid #581c87;
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 0 24px rgba(147, 51, 234, 0.14);
+}
+
+.ollama-info h2 {
+  font-size: 1.15rem;
+  color: #d8b4fe;
+  margin-bottom: 8px;
+}
+
+.ollama-info p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+}
+
+/* Painel central das pesquisas/mensagens da sessão */
+#chat {
+  flex: 1;
+  min-height: 250px;
+  max-height: 380px;
+  overflow-y: auto;
+  background-color: #09090d;
+  border: 1px solid #3b0764;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#chat:empty::before {
+  content: "Suas pesquisas temporárias aparecerão aqui...";
+  color: #6b7280;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: auto;
+}
+
+#chat > div,
+#chat > p {
+  background-color: #13131b;
+  border-left: 3px solid #9333ea;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Barra inferior circular/pílula preta com detalhes roxos */
+#form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #000000;
+  border: 2px solid #7e22ce;
+  border-radius: 9999px;
+  padding: 6px 8px 6px 22px;
+  box-shadow: 0 0 18px rgba(147, 51, 234, 0.25);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+#form:focus-within {
+  border-color: #c084fc;
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.45);
+}
+
+#pergunta {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+#pergunta::placeholder {
+  color: #9333ea;
+  opacity: 0.85;
+}
+
+#enviar {
+  background: linear-gradient(135deg, #9333ea, #581c87);
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.15s;
+}
+
+#enviar:hover {
+  filter: brightness(1.15);
+  transform: scale(1.03);
+}
+
+#enviar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}

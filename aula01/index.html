@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aula 01 - Chat com Ollama</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1 id="cima_chat">Bem-vindo</h1>
+
+    <section class="ollama-info" aria-label="Informações sobre a IA Ollama">
+      <h2>Sobre a IA Ollama</h2>
+      <p>
+        O <strong>Ollama</strong> é uma plataforma para executar modelos de inteligência artificial
+        localmente na sua máquina, oferecendo privacidade, baixa latência e autonomia sem depender da nuvem.
+      </p>
+    </section>
+
+    <div id="chat" aria-live="polite"></div>
+
+    <form id="form">
+      <input id="pergunta" aria-label="Sua mensagem" placeholder="Digite sua mensagem..." autocomplete="off" required>
+      <button id="enviar">Enviar</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
